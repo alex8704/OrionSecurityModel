@@ -1,8 +1,10 @@
 package co.com.binariasystems.orion.model.dto;
 
+import java.io.Serializable;
+
 import co.com.binariasystems.orion.model.enumerated.Application;
 
-public class ApplicationDTO {
+public class ApplicationDTO implements Serializable {
     private Integer applicationId;
     private Application applicationCode;
     private String name;

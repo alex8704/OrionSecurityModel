@@ -6,10 +6,12 @@
 
 package co.com.binariasystems.orion.model.enumerated;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Alexander
  */
-public enum Application {
+public enum Application implements Serializable {
     GESTPYMESOC, ORION
 }

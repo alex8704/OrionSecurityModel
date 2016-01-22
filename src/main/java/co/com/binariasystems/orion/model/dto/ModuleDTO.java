@@ -1,7 +1,9 @@
 package co.com.binariasystems.orion.model.dto;
 
+import java.io.Serializable;
 
-public class ModuleDTO {
+
+public class ModuleDTO implements Serializable {
     private Integer moduleId;
     private String name;
     private String description;

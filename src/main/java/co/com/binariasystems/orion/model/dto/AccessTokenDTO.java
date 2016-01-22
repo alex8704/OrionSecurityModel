@@ -1,10 +1,11 @@
 package co.com.binariasystems.orion.model.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import co.com.binariasystems.orion.model.enumerated.SN2Boolean;
 
-public class AccessTokenDTO {
+public class AccessTokenDTO implements Serializable {
 	private String tokenString;
 	private Date creationDate;
 	private Date expirationDate;

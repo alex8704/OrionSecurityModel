@@ -1,7 +1,9 @@
 package co.com.binariasystems.orion.model.dto;
 
+import java.io.Serializable;
 
-public class ResourceDTO {
+
+public class ResourceDTO implements Serializable {
     private Integer resourceId;
     private String resourcePath;
     private String name;

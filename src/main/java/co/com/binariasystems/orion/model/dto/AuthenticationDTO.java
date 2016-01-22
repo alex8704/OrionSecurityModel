@@ -1,6 +1,8 @@
 package co.com.binariasystems.orion.model.dto;
 
-public class AuthenticationDTO {
+import java.io.Serializable;
+
+public class AuthenticationDTO implements Serializable {
 	private String username;
 	private String password;
 	private Boolean rememberMe;

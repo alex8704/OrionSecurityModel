@@ -1,7 +1,9 @@
 package co.com.binariasystems.orion.model.dto;
 
+import java.io.Serializable;
 
-public class RoleDTO {
+
+public class RoleDTO implements Serializable {
     private Integer rolId;
     private String name;
     private String description;

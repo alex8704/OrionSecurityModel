@@ -1,7 +1,9 @@
 package co.com.binariasystems.orion.model.dto;
 
+import java.io.Serializable;
 
-public class UserCredentialsDTO {
+
+public class UserCredentialsDTO implements Serializable {
 	private String password;
     private String passwordSalt;
     

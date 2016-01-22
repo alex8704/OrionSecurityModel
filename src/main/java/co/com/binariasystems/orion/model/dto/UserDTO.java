@@ -1,10 +1,11 @@
 package co.com.binariasystems.orion.model.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import co.com.binariasystems.orion.model.enumerated.SN2Boolean;
 
-public class UserDTO {
+public class UserDTO implements Serializable {
 	private Integer userId;
     private String loginAlias;
     private UserCredentialsDTO credentials;

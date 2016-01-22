@@ -6,11 +6,13 @@
 
 package co.com.binariasystems.orion.model.enumerated;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Alexander
  */
-public enum SN2Boolean {
+public enum SN2Boolean implements Serializable {
     S(true),N(false);
     private final boolean booleanValue;
     SN2Boolean(boolean booleanValue){
