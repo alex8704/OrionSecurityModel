@@ -9,6 +9,7 @@ public class ModuleDTO implements Serializable {
     private String description;
     private ModuleDTO parentModule;
     private ApplicationDTO applicationId;
+    private Integer index;
 	/**
 	 * @return the moduleId
 	 */
@@ -69,5 +70,16 @@ public class ModuleDTO implements Serializable {
 	public void setApplicationId(ApplicationDTO applicationId) {
 		this.applicationId = applicationId;
 	}
-    
+	/**
+	 * @return the index
+	 */
+	public Integer getIndex() {
+		return index;
+	}
+	/**
+	 * @param index the index to set
+	 */
+	public void setIndex(Integer index) {
+		this.index = index;
+	}
 }

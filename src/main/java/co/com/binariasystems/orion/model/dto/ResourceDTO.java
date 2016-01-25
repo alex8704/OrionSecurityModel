@@ -10,6 +10,7 @@ public class ResourceDTO implements Serializable {
     private String description;
     private ModuleDTO module;
     private ApplicationDTO application;
+    private Integer index;
 	/**
 	 * @return the resourceId
 	 */
@@ -81,6 +82,18 @@ public class ResourceDTO implements Serializable {
 	 */
 	public void setApplication(ApplicationDTO application) {
 		this.application = application;
+	}
+	/**
+	 * @return the index
+	 */
+	public Integer getIndex() {
+		return index;
+	}
+	/**
+	 * @param index the index to set
+	 */
+	public void setIndex(Integer index) {
+		this.index = index;
 	}
     
     

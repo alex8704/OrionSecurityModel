@@ -6,6 +6,7 @@ public class AuthenticationDTO implements Serializable {
 	private String username;
 	private String password;
 	private Boolean rememberMe;
+	private String netAddress;
 	private String applicationCode;
 	
 	public AuthenticationDTO(){}
@@ -35,7 +36,23 @@ public class AuthenticationDTO implements Serializable {
 		this.password = password;
 		this.rememberMe = rememberMe;
 	}
-
+	
+	public AuthenticationDTO(String username, String password, Boolean rememberMe, String applicationCode, String netAddress) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.rememberMe = rememberMe;
+		this.applicationCode = applicationCode;
+		this.netAddress = netAddress;
+	}
+	
+	public AuthenticationDTO(String username, String password, String applicationCode, String netAddress) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.applicationCode = applicationCode;
+		this.netAddress = netAddress;
+	}
 
 
 	public String getUsername() {
@@ -74,6 +91,14 @@ public class AuthenticationDTO implements Serializable {
 	 */
 	public void setApplicationCode(String applicationCode) {
 		this.applicationCode = applicationCode;
+	}
+
+	public String getNetAddress() {
+		return netAddress;
+	}
+
+	public void setNetAddress(String netAddress) {
+		this.netAddress = netAddress;
 	}
 	
 	
