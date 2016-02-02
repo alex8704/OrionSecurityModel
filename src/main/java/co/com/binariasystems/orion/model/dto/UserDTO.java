@@ -3,6 +3,7 @@ package co.com.binariasystems.orion.model.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+import co.com.binariasystems.fmw.util.ObjectUtils.UpperTransform;
 import co.com.binariasystems.orion.model.enumerated.SN2Boolean;
 
 public class UserDTO implements Serializable {
@@ -11,6 +12,7 @@ public class UserDTO implements Serializable {
     private UserCredentialsDTO credentials;
     private String identificationTypeCode;
     private String identificationNumber;
+    @UpperTransform
     private String fullName;
     private Date lastAccessDate;
     private String lastAccessIP;

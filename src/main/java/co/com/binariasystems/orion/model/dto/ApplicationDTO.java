@@ -2,12 +2,15 @@ package co.com.binariasystems.orion.model.dto;
 
 import java.io.Serializable;
 
+import co.com.binariasystems.fmw.util.ObjectUtils.UpperTransform;
 import co.com.binariasystems.orion.model.enumerated.Application;
 
 public class ApplicationDTO implements Serializable {
     private Integer applicationId;
+    @UpperTransform
     private Application applicationCode;
     private String name;
+    @UpperTransform
     private String description;
 	/**
 	 * @return the applicationId

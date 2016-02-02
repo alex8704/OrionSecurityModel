@@ -2,12 +2,20 @@ package co.com.binariasystems.orion.model.dto;
 
 import java.io.Serializable;
 
+import co.com.binariasystems.fmw.dto.Selectable;
+import co.com.binariasystems.fmw.util.ObjectUtils.UpperTransform;
 
-public class RoleDTO implements Serializable {
+
+public class RoleDTO implements Serializable, Selectable {
     private Integer rolId;
+    @UpperTransform
     private String name;
+    @UpperTransform
     private String description;
     private ApplicationDTO application;
+    
+    private boolean selected;
+    
 	/**
 	 * @return the rolId
 	 */
@@ -57,6 +65,18 @@ public class RoleDTO implements Serializable {
 		this.application = application;
 	}
 	
+	/**
+	 * @return the selected
+	 */
+	public boolean isSelected() {
+		return selected;
+	}
+	/**
+	 * @param selected the selected to set
+	 */
+	public void setSelected(boolean selected) {
+		this.selected = selected;
+	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
