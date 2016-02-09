@@ -2,15 +2,31 @@ package co.com.binariasystems.orion.model.dto;
 
 import java.io.Serializable;
 
+import co.com.binariasystems.commonsmodel.enumerated.Application;
+import co.com.binariasystems.fmw.entity.annot.CRUDViewConfig;
+import co.com.binariasystems.fmw.entity.annot.Column;
+import co.com.binariasystems.fmw.entity.annot.Entity;
+import co.com.binariasystems.fmw.entity.annot.Key;
+import co.com.binariasystems.fmw.entity.annot.SearcherConfig;
+import co.com.binariasystems.fmw.entity.annot.ViewFieldConfig;
+import co.com.binariasystems.fmw.entity.cfg.PKGenerationStrategy;
 import co.com.binariasystems.fmw.util.ObjectUtils.UpperTransform;
-import co.com.binariasystems.orion.model.enumerated.Application;
+import co.com.binariasystems.orion.model.constants.Constants;
 
+@Entity(table=Constants.ORION_DBSCHEMA+"."+"SEGT_APLICACIONES",pkGenerationStrategy=PKGenerationStrategy.IDENTITY)
+@CRUDViewConfig(searcherConfig=@SearcherConfig(descriptionFields="name"))
 public class ApplicationDTO implements Serializable {
+	@Key(column="ID_APLICACION")
     private Integer applicationId;
     @UpperTransform
+    @Column(name="COD_APLICACION")
     private Application applicationCode;
+    @Column(name="NOMBRE")
+	@ViewFieldConfig(ommitUpperTransform=true)
     private String name;
     @UpperTransform
+    @Column(name="DESCRIPCION")
+	@ViewFieldConfig(ommitUpperTransform=true)
     private String description;
 	/**
 	 * @return the applicationId

@@ -7,7 +7,12 @@
 	<dependencies>
 		<dependency>
 			<groupId>co.com.binariasystems</groupId>
-			<artifactId>binaria-fmw-util</artifactId>
+			<artifactId>binaria-fmw-entity</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>co.com.binariasystems</groupId>
+			<artifactId>CommonsModel</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>

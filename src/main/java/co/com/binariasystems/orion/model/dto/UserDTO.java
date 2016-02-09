@@ -3,8 +3,8 @@ package co.com.binariasystems.orion.model.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+import co.com.binariasystems.commonsmodel.enumerated.SN2Boolean;
 import co.com.binariasystems.fmw.util.ObjectUtils.UpperTransform;
-import co.com.binariasystems.orion.model.enumerated.SN2Boolean;
 
 public class UserDTO implements Serializable {
 	private Integer userId;
@@ -50,6 +50,8 @@ public class UserDTO implements Serializable {
 	 * @return the credentials
 	 */
 	public UserCredentialsDTO getCredentials() {
+		if(credentials == null)
+			credentials = new UserCredentialsDTO();
 		return credentials;
 	}
 	/**

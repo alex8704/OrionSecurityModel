@@ -3,7 +3,7 @@ package co.com.binariasystems.orion.model.dto;
 import java.io.Serializable;
 import java.util.Date;
 
-import co.com.binariasystems.orion.model.enumerated.SN2Boolean;
+import co.com.binariasystems.commonsmodel.enumerated.SN2Boolean;
 
 public class AccessTokenDTO implements Serializable {
 	private String tokenString;

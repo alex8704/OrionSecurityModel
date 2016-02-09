@@ -3,15 +3,31 @@ package co.com.binariasystems.orion.model.dto;
 import java.io.Serializable;
 
 import co.com.binariasystems.fmw.dto.Selectable;
+import co.com.binariasystems.fmw.entity.annot.CRUDViewConfig;
+import co.com.binariasystems.fmw.entity.annot.Column;
+import co.com.binariasystems.fmw.entity.annot.Entity;
+import co.com.binariasystems.fmw.entity.annot.Key;
+import co.com.binariasystems.fmw.entity.annot.Relation;
+import co.com.binariasystems.fmw.entity.annot.SearcherConfig;
+import co.com.binariasystems.fmw.entity.annot.ViewFieldConfig;
+import co.com.binariasystems.fmw.entity.cfg.EntityConfigUIControl;
+import co.com.binariasystems.fmw.entity.cfg.PKGenerationStrategy;
 import co.com.binariasystems.fmw.util.ObjectUtils.UpperTransform;
+import co.com.binariasystems.orion.model.constants.Constants;
 
-
+@Entity(table=Constants.ORION_DBSCHEMA+"."+"SEGT_ROLES",pkGenerationStrategy=PKGenerationStrategy.IDENTITY)
+@CRUDViewConfig(searcherConfig=@SearcherConfig(descriptionFields="name"))
 public class RoleDTO implements Serializable, Selectable {
-    private Integer rolId;
+	@Key(column="ID_ROL")
+	private Integer rolId;
     @UpperTransform
+    @Column(name="NOMBRE")
     private String name;
     @UpperTransform
+    @Column(name="DESCRIPCION")
     private String description;
+    @ViewFieldConfig(uiControl=EntityConfigUIControl.COMBOBOX)
+	@Relation(column="ID_APLICACION")
     private ApplicationDTO application;
     
     private boolean selected;
