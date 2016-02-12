@@ -10,7 +10,6 @@ public class UserDTO implements Serializable {
 	private Integer userId;
     private String loginAlias;
     private UserCredentialsDTO credentials;
-    private String identificationTypeCode;
     private String identificationNumber;
     @UpperTransform
     private String fullName;
@@ -60,18 +59,7 @@ public class UserDTO implements Serializable {
 	public void setCredentials(UserCredentialsDTO credentials) {
 		this.credentials = credentials;
 	}
-	/**
-	 * @return the identificationTypeCode
-	 */
-	public String getIdentificationTypeCode() {
-		return identificationTypeCode;
-	}
-	/**
-	 * @param identificationTypeCode the identificationTypeCode to set
-	 */
-	public void setIdentificationTypeCode(String identificationTypeCode) {
-		this.identificationTypeCode = identificationTypeCode;
-	}
+	
 	/**
 	 * @return the identificationNumber
 	 */
@@ -203,7 +191,6 @@ public class UserDTO implements Serializable {
 		result = prime * result + ((credentials == null) ? 0 : credentials.hashCode());
 		result = prime * result + ((emailAddress == null) ? 0 : emailAddress.hashCode());
 		result = prime * result + ((identificationNumber == null) ? 0 : identificationNumber.hashCode());
-		result = prime * result + ((identificationTypeCode == null) ? 0 : identificationTypeCode.hashCode());
 		result = prime * result + ((loginAlias == null) ? 0 : loginAlias.hashCode());
 		return result;
 	}
@@ -233,11 +220,6 @@ public class UserDTO implements Serializable {
 			if (other.identificationNumber != null)
 				return false;
 		} else if (!identificationNumber.equals(other.identificationNumber))
-			return false;
-		if (identificationTypeCode == null) {
-			if (other.identificationTypeCode != null)
-				return false;
-		} else if (!identificationTypeCode.equals(other.identificationTypeCode))
 			return false;
 		if (loginAlias == null) {
 			if (other.loginAlias != null)

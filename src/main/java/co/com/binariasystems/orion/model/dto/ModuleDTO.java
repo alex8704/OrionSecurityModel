@@ -11,12 +11,13 @@ import co.com.binariasystems.fmw.entity.annot.SearcherConfig;
 import co.com.binariasystems.fmw.entity.annot.ViewFieldConfig;
 import co.com.binariasystems.fmw.entity.cfg.EntityConfigUIControl;
 import co.com.binariasystems.fmw.entity.cfg.PKGenerationStrategy;
+import co.com.binariasystems.fmw.util.ObjectUtils;
 import co.com.binariasystems.orion.model.constants.Constants;
 
 
 @Entity(table=Constants.ORION_DBSCHEMA+"."+"SEGT_MODULOS",pkGenerationStrategy=PKGenerationStrategy.IDENTITY)
 @CRUDViewConfig(searcherConfig=@SearcherConfig(descriptionFields="name"))
-public class ModuleDTO implements Serializable {
+public class ModuleDTO implements Serializable, Cloneable {
 	@Key(column="ID_MODULO")
     private Integer moduleId;
 	@Column(name="NOMBRE")
@@ -104,6 +105,13 @@ public class ModuleDTO implements Serializable {
 	public void setIndex(Integer index) {
 		this.index = index;
 	}
+	
+	
+	@Override
+	public Object clone() {
+		return ObjectUtils.transferProperties(this, ModuleDTO.class);
+	}
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
