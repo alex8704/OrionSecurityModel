@@ -188,7 +188,6 @@ public class UserDTO implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((credentials == null) ? 0 : credentials.hashCode());
 		result = prime * result + ((emailAddress == null) ? 0 : emailAddress.hashCode());
 		result = prime * result + ((identificationNumber == null) ? 0 : identificationNumber.hashCode());
 		result = prime * result + ((loginAlias == null) ? 0 : loginAlias.hashCode());
@@ -206,11 +205,6 @@ public class UserDTO implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		UserDTO other = (UserDTO) obj;
-		if (credentials == null) {
-			if (other.credentials != null)
-				return false;
-		} else if (!credentials.equals(other.credentials))
-			return false;
 		if (emailAddress == null) {
 			if (other.emailAddress != null)
 				return false;

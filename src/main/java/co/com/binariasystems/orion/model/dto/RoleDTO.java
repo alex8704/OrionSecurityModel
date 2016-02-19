@@ -6,6 +6,7 @@ import co.com.binariasystems.fmw.dto.Selectable;
 import co.com.binariasystems.fmw.entity.annot.CRUDViewConfig;
 import co.com.binariasystems.fmw.entity.annot.Column;
 import co.com.binariasystems.fmw.entity.annot.Entity;
+import co.com.binariasystems.fmw.entity.annot.Ignore;
 import co.com.binariasystems.fmw.entity.annot.Key;
 import co.com.binariasystems.fmw.entity.annot.Relation;
 import co.com.binariasystems.fmw.entity.annot.SearcherConfig;
@@ -20,16 +21,16 @@ import co.com.binariasystems.orion.model.constants.Constants;
 public class RoleDTO implements Serializable, Selectable {
 	@Key(column="ID_ROL")
 	private Integer rolId;
+	@ViewFieldConfig(uiControl=EntityConfigUIControl.COMBOBOX)
+	@Relation(column="ID_APLICACION")
+    private ApplicationDTO application;
     @UpperTransform
     @Column(name="NOMBRE")
     private String name;
     @UpperTransform
     @Column(name="DESCRIPCION")
     private String description;
-    @ViewFieldConfig(uiControl=EntityConfigUIControl.COMBOBOX)
-	@Relation(column="ID_APLICACION")
-    private ApplicationDTO application;
-    
+    @Ignore
     private boolean selected;
     
 	/**
